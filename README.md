@@ -2,7 +2,7 @@ Module: Boxout
 
 Description
 ===========
-This module is *heavily* based on the (Boxout)[ihttps://www.drupal.org/project/boxout] module. 
+This module is *heavily* based on the (Boxout)[https://www.drupal.org/project/boxout] module. 
 
 The purpose of this module is to use a CKEditor widget for editing the box contents.
 
