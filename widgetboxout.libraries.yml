@@ -1,0 +1,5 @@
+widgetboxout:
+  version: VERSION
+  css:
+    theme:
+      js/plugins/widgetboxout/widgetboxout.css: {}

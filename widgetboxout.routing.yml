@@ -1,0 +1,10 @@
+widgetboxout.dialog:
+  path: '/widgetboxout/dialog'
+  defaults:
+    _form: '\Drupal\widgetboxout\Form\BoxoutDialog'
+    _title: 'Widget Boxout'
+  options:
+    _theme: ajax_base_page
+  requirements:
+    _permission: 'access in-place editing'
+

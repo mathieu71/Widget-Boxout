@@ -1,0 +1,52 @@
+<?php
+
+/**
+ * @file
+ * Install/Update hooks for WidgetBox.
+ */
+
+use Drupal\editor\Entity\Editor;
+
+/**
+ * Helper to configure Widget Boxout on editors.
+ */
+function _widgetboxout_update_editors() {
+  foreach (['basic_html', 'full_html'] as $id) {
+    if ($editor = Editor::load($id)) {
+      switch ($id) {
+        case 'basic_html':
+          // Add boxout to allowed html.
+          $config = \Drupal::configFactory()->getEditable('filter.format.basic_html');
+          $key = 'filters.filter_html.settings.allowed_html';
+          $config_value = $config->get($key);
+          $config_value .= '<div class="boxout default plain">';
+          $config->set($key, $config_value)->save(TRUE);
+          break;
+      }
+
+      $config = $editor->getSettings();
+      // Add boxout to toolbar.
+      foreach ($config['toolbar']['rows'][0] as &$row) {
+        // Try to add Boxout on toolbar.
+        if ($row['name'] == 'Tools') {
+          if (!array_search('WidgetBox', $row['items'])) {
+            $row['items'][] = 'WidgetBox';
+          }
+        }
+      }
+
+      // Save settings.
+      $editor->setSettings($config);
+      $editor->save();
+      \Drupal::service('plugin.manager.editor')->clearCachedDefinitions();
+    }
+  }
+}
+
+/**
+ * Implements hook_install().
+ */
+function widgetboxout_install() {
+  _widgetboxout_update_editors();
+}
+

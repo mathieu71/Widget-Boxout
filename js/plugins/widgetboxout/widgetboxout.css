@@ -1,0 +1,78 @@
+/* CSS for admin interface and front-end */
+
+.widgetboxout.default {
+  float: right;
+  width: 45%;
+  margin: .4em 0 .4em 1em;
+  background: #e6ecef;
+  padding: 0.5em;
+  border-top: 6px solid #f2b250;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  line-height: 1.4;
+}
+
+.widgetboxout.plain {
+  float: none;
+  margin: .4em 0 .4em 0;
+  background: #efefef;
+  padding: 0.4em;
+  border: 1px solid #ccc;
+  width: 100%;
+}
+
+.widgetboxout-dialog.ui-dialog {
+  max-width: 100%;
+}
+
+/* ======================== */
+
+.mybox {
+  padding: 8px;
+  margin: 10px;
+  background: #eee;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  box-shadow: 0 1px 1px #fff inset, 0 -1px 0px #ccc inset;
+}
+
+.mybox-title,
+.mybox-content {
+  box-shadow: 0 1px 1px #ddd inset;
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+  background: #fff;
+}
+
+.mybox-title {
+  margin: 0 0 8px;
+  padding: 5px 8px;
+}
+
+.mybox-content {
+  padding: 0 8px;
+}
+
+.mybox-content::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.mybox.tiers-droite {
+  float: right;
+  width: 33%;
+}
+.mybox.demi-droite {
+  float: right;
+  width: 50%;
+}
+.mybox.tiers-gauche {
+  float: left;
+  width: 33%;
+}
+.mybox.demi-gauche {
+  float: left;
+  width: 50%;
+}

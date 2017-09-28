@@ -1,0 +1,23 @@
+<?php
+
+/**
+ * @file
+ * Module for Boxout.
+ */
+
+use Drupal\editor\Entity\Editor;
+
+/**
+ * Implements hook_ckeditor_css_alter().
+ */
+function widgetboxout_ckeditor_css_alter(array &$css, Editor $editor) {
+  $css[] = drupal_get_path('module', 'widgetboxout') . '/js/plugins/widgetboxout/widgetboxout.css';
+}
+
+/**
+ * Implements hook_preprocess_page().
+ */
+function widgetboxout_preprocess_page(&$variables) {
+  $variables['#attached']['library'][] = 'widgetboxout/widgetboxout';
+  /* $variables['#attached']['library'][] = 'boxout/boxout.simplebox';*/
+}
